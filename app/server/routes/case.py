@@ -21,7 +21,7 @@ router = APIRouter()
 @router.post("/", response_description="Case data added into the database")
 async def add_case_data(case: CaseSchema = Body(...)):
     case = jsonable_encoder(case)
-    new_student = await add_case(case)
+    new_case = await add_case(case)
     return ResponseModel(new_case, "Case added successfully.")
 
 
