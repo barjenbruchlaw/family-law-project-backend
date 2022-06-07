@@ -6,11 +6,6 @@ from app.server.routes.case import router as CaseRouter
 
 app = FastAPI()
 
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-]
-
 app.include_router(StudentRouter, tags=["Student"], prefix="/student")
 app.include_router(CaseRouter, tags=["Case"], prefix="/case")
 
